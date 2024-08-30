@@ -16,18 +16,22 @@ class Clock extends Component {
     });
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     this.timerID = setInterval(this.tick, 1000);
   }
 
-  componentWillUnmount = () => {
+  componentWillUnmount() {
     clearInterval(this.timerID);
   }
 
   render() {
+    const options = {
+      hour12: false // Set to true for 12-hour format, false for 24-hour format
+    };
+
     return (
       <span id="clock">
-        {this.state.date.toLocaleTimeString()}
+        {this.state.date.toLocaleTimeString([], options)}
       </span>
     );
   }

@@ -5,36 +5,46 @@ class Clock extends Component {
     super(props);
     this.state = {
       date: new Date()
-    }
+    };
 
     this.tick = this.tick.bind(this);
   }
 
   tick() {
-    this.setState ({
+    this.setState({
       date: new Date()
     });
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     this.timerID = setInterval(this.tick, 1000);
   }
 
-  componentWillUnmount = () => {
+  componentWillUnmount() {
     clearInterval(this.timerID);
   }
 
   render() {
+    const timeOptions = {
+      hour12: false,  // Set to false for 24-hour format
+      hour: '2-digit',
+      minute: '2-digit'
+    };
+
+    const dateOptions = {
+      month: 'long',
+      day: '2-digit'
+    };
+
     return (
       <div id="single-room__clock">
         <div id="single-room__time">
-          {this.state.date.toLocaleTimeString([],{hour: '2-digit', minute: '2-digit'})}
+          {this.state.date.toLocaleTimeString([], timeOptions)}
         </div>
         <div id="single-room__date">
-          {this.state.date.toLocaleDateString([],{month: 'long', day: '2-digit'})}
+          {this.state.date.toLocaleDateString([], dateOptions)}
         </div>
       </div>
-
     );
   }
 }

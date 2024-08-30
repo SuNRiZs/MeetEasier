@@ -3,7 +3,6 @@ module.exports = function(callback) {
 	var ews = require('ews-javascript-api');
 	var config = require('../../config/config');
 	var blacklist = require('../../config/room-blacklist.js');
-
 	// ews -----------------------------------------------------------------------
 	// - TODO: Make the exchangeserver-version configurable
 	var exch = new ews.ExchangeService(ews.ExchangeVersion.Exchange2016);

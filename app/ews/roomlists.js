@@ -2,7 +2,9 @@ module.exports = function(callback) {
 	// modules -------------------------------------------------------------------
 	var ews = require('ews-javascript-api');
 	var config = require('../../config/config');
-
+	const moment = require('moment');
+	const https = require('https');
+	//exch.AutodiscoverUrl("s.semenov@smart-m2m.ru");
 	// ews -----------------------------------------------------------------------
 	// - TODO: Make the exchangeserver-version configurable
 	var exch = new ews.ExchangeService(ews.ExchangeVersion.Exchange2016);

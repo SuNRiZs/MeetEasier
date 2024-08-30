@@ -9,10 +9,10 @@ require('dotenv').config();
 module.exports = {
 	exchange: {
 		// this user MUST have full access to all the room accounts
-		username: process.env.EWS_USERNAME ? process.env.EWS_USERNAME : 'EWS_USERNAME_NOT_SET',
-		password: process.env.EWS_PASSWORD ? process.env.EWS_PASSWORD : 'EWS_PASSWORD_NOT_SET',
+		username: process.env.EWS_USERNAME ? process.env.EWS_USERNAME : 's.semenov@smart-m2m.ru',
+		password: process.env.EWS_PASSWORD ? process.env.EWS_PASSWORD : 'Djpdjp1989',
 		// url for the ews-api on the exchange-server
-		uri: process.env.EWS_URI ? process.env.EWS_URI : 'https://outlook.office365.com/EWS/Exchange.asmx'
+		uri: process.env.EWS_URI ? process.env.EWS_URI : 'https://mail.smart-m2m.ru/EWS/Exchange.asmx'
 	},
 	// Configuration for the msgraph-sdk
 	msalConfig: {
@@ -39,7 +39,7 @@ module.exports = {
 	},
 	// TODO: Check if we really need the domain variable
 	// Ex: CONTOSO.COM, Contoso.com, Contoso.co.uk, etc.
-	domain: process.env.DOMAIN ? process.env.DOMAIN : 'contoso.com',
+	domain: process.env.DOMAIN ? process.env.DOMAIN : 'smart-m2m.ru',
 
 	// Search-settings to use when retrieving data from the calendars
 	calendarSearch: {
